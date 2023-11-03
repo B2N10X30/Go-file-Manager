@@ -6,22 +6,22 @@ import (
 	"time"
 )
 
-func test() {
+func prinTest() {
 	var (
-		Name       string = "Samuel Bonu"
-		Address    string = "Block 10, Oremeji Street, HappyLand Estate Sangotede, Ajah. Lagos"
-		Str_un     string = "string 1"
-		Str_deu    string = "string 2"
-		Str_tri    string = "string 3"
-		Str_quatre string = "string 4"
+		Name     string = "Samuel Bonu"
+		Address  string = "Block 10, Oremeji Street, HappyLand Estate Sangotede, Ajah. Lagos"
+		strOne   string = "string 1"
+		strTwo   string = "string 2"
+		strThree string = "string 3"
+		strFour  string = "string 4"
 	)
 
 	fmt.Printf("Name: %s\n", Name)
 	fmt.Printf("Address: %s\n", Address)
-	fmt.Printf("some strings, %s, %s, %s, %s\n", Str_un, Str_deu, Str_tri, Str_quatre)
+	fmt.Printf("some strings, %s, %s, %s, %s\n", strOne, strTwo, strThree, strFour)
 }
 
-func test2() {
+func inpuTest() {
 	var (
 		firstName string
 		LuckyNum  int
@@ -44,7 +44,7 @@ func test2() {
 
 }
 
-func Age() {
+func ageCalculator() {
 	var (
 		today = time.Now().Year()
 		DOB   int
@@ -58,7 +58,7 @@ func Age() {
 	fmt.Printf("you are %d years old", age)
 }
 
-func Weight() {
+func averageWeight() {
 	var (
 		ClassWeights = []float64{10, 20, 30, 40, 50}
 
@@ -137,6 +137,7 @@ type house struct {
 // a struct is mainly native and used for procedural programming while Classes are used in the concept of OOP
 // a map is an object containing data in key value pairs
 //no maps are not ordered
+// variables are stored in memory
 
 // a pointer is a variable that stores the location of a value in memory used especially in linked list
 
@@ -156,14 +157,19 @@ func filer() {
 }
 
 func main() {
-	test()
-	test2()
-	Age()
-	Weight()
+	prinTest()
+	inpuTest()
+	ageCalculator()
+	averageWeight()
 	divider()
 	creatArray()
 	filer()
 }
 
 /* i skipped questions i'm not familiar with :(
- */
+
+-check if file exist on external hard disk
+-reading files by lines
+-write to files
+-how to declare a pointer
+*/
