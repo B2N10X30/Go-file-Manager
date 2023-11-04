@@ -8,6 +8,7 @@ func main() {
 	divider()
 	creatArray()
 	filer()
+	writeToFile()
 }
 
 /* i skipped questions i'm not familiar with :(
