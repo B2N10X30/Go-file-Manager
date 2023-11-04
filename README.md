@@ -1,6 +1,6 @@
 # To do
 
-- [] file insertion (how to add contents to file)
+- [x] file insertion (how to add contents to file)
 - [] file size (amount of space a file consumes)
 - [] write a function that allows a user to upload file to disk
 - [] create a file organizer script that automatically categorizes and organizes files in a specific directory.
