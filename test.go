@@ -128,10 +128,15 @@ func divider() {
 // but while loops run if a specified condition is true and for loops is used to do something for a
 // specified number of times
 
-type house struct {
-	noRooms int
-	price   int
-	city    string
+type House struct {
+	NoRooms int
+	Price   int
+	City    string
+	Roomie  Room
+}
+
+type Room struct {
+	Color string
 }
 
 // a struct is mainly native and used for procedural programming while Classes are used in the concept of OOP
@@ -142,6 +147,17 @@ type house struct {
 // a pointer is a variable that stores the location of a value in memory used especially in linked list
 
 func filer() {
+
+	x := House{
+		NoRooms: 1,
+		Price:   250,
+		City:    "atlanta",
+		Roomie: Room{
+			Color: "purple",
+		},
+	}
+
+	fmt.Printf("color of my room is : %s\n", x.Roomie.Color)
 
 	filePath := "hercury/Documents/nano.txt"
 
@@ -155,21 +171,3 @@ func filer() {
 		fmt.Printf("Error checking file: %v\n", err)
 	}
 }
-
-func main() {
-	prinTest()
-	inpuTest()
-	ageCalculator()
-	averageWeight()
-	divider()
-	creatArray()
-	filer()
-}
-
-/* i skipped questions i'm not familiar with :(
-
--check if file exist on external hard disk
--reading files by lines
--write to files
--how to declare a pointer
-*/
