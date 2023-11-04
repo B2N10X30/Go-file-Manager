@@ -7,8 +7,9 @@ func main() {
 	averageWeight()
 	divider()
 	creatArray()
-	filer()
+	checkIfFileExist()
 	writeToFile()
+	checkFileSize()
 }
 
 /* i skipped questions i'm not familiar with :(

