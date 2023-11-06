@@ -1,5 +1,8 @@
 package FileUpload
 
+/* author Samuel
+ */
+
 import (
 	"fmt"
 	"io"

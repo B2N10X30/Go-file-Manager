@@ -14,6 +14,7 @@ func main() {
 	checkFileSize()
 	FileUpload.Listener()
 	FileUpload.Client()
+	FileOrganizer()
 }
 
 /* i skipped questions i'm not familiar with :(
