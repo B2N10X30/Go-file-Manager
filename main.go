@@ -1,20 +1,14 @@
 package main
 
-import "FileUpload"
+import (
+	"Fileupload"
+	"fmt"
+)
 
 func main() {
-	prinTest()
-	inpuTest()
-	ageCalculator()
-	averageWeight()
-	divider()
-	creatArray()
-	checkIfFileExist()
-	writeToFile()
-	checkFileSize()
-	FileUpload.Listener()
-	FileUpload.Client()
-	FileOrganizer()
+	fmt.Println("Hi, there")
+	Fileupload.Listen()
+	Fileupload.Client()
 }
 
 /* i skipped questions i'm not familiar with :(

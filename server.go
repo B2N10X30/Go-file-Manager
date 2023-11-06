@@ -1,4 +1,4 @@
-package FileUpload
+package main
 
 /* author Samuel
  */
