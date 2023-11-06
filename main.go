@@ -1,5 +1,7 @@
 package main
 
+import "FileUpload"
+
 func main() {
 	prinTest()
 	inpuTest()
@@ -10,6 +12,8 @@ func main() {
 	checkIfFileExist()
 	writeToFile()
 	checkFileSize()
+	FileUpload.Listener()
+	FileUpload.Client()
 }
 
 /* i skipped questions i'm not familiar with :(
