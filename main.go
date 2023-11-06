@@ -1,14 +1,14 @@
 package main
 
 import (
-	"Fileupload"
 	"fmt"
 )
 
 func main() {
-	fmt.Println("Hi, there")
-	Fileupload.Listen()
-	Fileupload.Client()
+	fmt.Print("Hi, there")
+	FileOrganizer()
+	Listener()
+	Client()
 }
 
 /* i skipped questions i'm not familiar with :(
