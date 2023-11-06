@@ -23,12 +23,12 @@ func Listener() {
 		if err != nil {
 			log.Fatalf("Error accepting connection: %v", err)
 		}
-		go handleConnection(conn)
+		go HandleConnection(conn)
 	}
 
 }
 
-func handleConnection(conn net.Conn) {
+func HandleConnection(conn net.Conn) {
 	//buffer to accept incoming data
 	buffer := make([]byte, 1024)
 	content, err := conn.Read(buffer)

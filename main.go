@@ -1,14 +1,19 @@
 package main
 
+/* author Samuel
+ */
+
 import (
 	"fmt"
 )
 
 func main() {
 	fmt.Print("Hi, there")
-	FileOrganizer()
 	Listener()
 	Client()
+	FileOrganizer()
+	checkFileSize()
+	writeToFile()
 }
 
 /* i skipped questions i'm not familiar with :(
