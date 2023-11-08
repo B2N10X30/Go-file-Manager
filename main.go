@@ -8,12 +8,7 @@ import (
 )
 
 func main() {
-	fmt.Print("Hi, there")
-	Listener()
-	Client()
-	FileOrganizer()
-	checkFileSize()
-	writeToFile()
+	fmt.Println("Hi, there")
 }
 
 /* i skipped questions i'm not familiar with :(
