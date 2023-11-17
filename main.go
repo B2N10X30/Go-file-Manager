@@ -4,11 +4,11 @@ package main
  */
 
 import (
-	"fmt"
+	"test/fileManager"
 )
 
 func main() {
-	fmt.Println("Hi, there")
+	fileManager.Search("red.py", "/home/hercury/herxes")
 }
 
 /* i skipped questions i'm not familiar with :(

