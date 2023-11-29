@@ -72,12 +72,12 @@ func IsDirEmpty(dirPath string) (bool, error) {
 	return false, err
 }
 
-func GetDirSize(dirPath string) {
+func GetDirSize(dirPath string) (int, error) {
 	dirInfo, err := os.Stat(dirPath)
 	if err != nil {
 		log.Fatal(err)
 	}
-	fmt.Printf("%s is %d bytes", dirPath, dirInfo.Size())
+	return int(dirInfo.Size()), nil
 }
 
 func IsExist(dirName string) (bool, error) {
