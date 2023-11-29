@@ -97,8 +97,8 @@ func IsExist(dirName string) (bool, error) {
 	}
 }
 
-func FileOrganizer() {
-	listDirectory, err := os.ReadDir(".")
+func FileOrganizer(dirName string) {
+	listDirectory, err := os.ReadDir(dirName)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -106,17 +106,19 @@ func FileOrganizer() {
 	for _, file := range listDirectory {
 		extension := filepath.Ext(file.Name())
 		if len(extension) > 1 {
-			dirName := extension[1:]
+			directoryName := extension[1:]
+			//new directory will be dirName/directoryName
+			newDirPath := filepath.Join(dirName, directoryName)
 
-			if _, err := os.Stat(dirName); os.IsNotExist(err) {
+			if _, err := os.Stat(newDirPath); os.IsNotExist(err) {
 				// Directory does not exist, so create it
-				err := os.Mkdir(dirName, 0755) // 0755 is the permission mode
+				err := os.Mkdir(newDirPath, 0755) // 0755 is the permission mode
 				if err != nil {
 					log.Fatal(err)
 				}
 			}
-			newPath := filepath.Join(dirName, file.Name())
-			err = os.Rename(file.Name(), newPath)
+			newFilePath := filepath.Join(newDirPath, file.Name())
+			err = os.Rename(filepath.Join(dirName, file.Name()), newFilePath)
 			if err != nil {
 				log.Fatal(err)
 			}
