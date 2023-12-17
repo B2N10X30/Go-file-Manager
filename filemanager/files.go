@@ -130,3 +130,21 @@ func Search(fileName, searchDir string) (string, error) {
 	fmt.Printf("%s found at %s", fileName, foundFilePath)
 	return foundFilePath, nil
 }
+
+func Reader(Path string) {
+	file, err := os.Open(Path)
+	if err != nil {
+		log.Println("Error Opening file ", err)
+	}
+	fileInfo, err := file.Stat()
+	if err != nil {
+		log.Println(err)
+	}
+	size := fileInfo.Size()
+	myReader := make([]byte, size)
+	_, err = file.Read(myReader)
+	if err != nil {
+		log.Println(err)
+	}
+	fmt.Println(string(myReader))
+}
